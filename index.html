@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Enter number to check if it is prime</h1>
+
+    <input id="primeInpt" placeholder="Enter your number"> 
+    <button id="primeBtn">Check</button>
+    <h2 id='base'></h2>
+
+    <script>
+
+        $("#primeBtn").on('click', function(){
+
+          let inputVal = $('#primeInpt').val();
+
+          var prime = true;
+          for( j =2; j < inputVal; j++){
+              if( inputVal % j === 0 || inputVal === 1){
+                  prime = false;
+                  break;
+              }
+          }
+            if(prime === true){
+                $('#base').append(`${inputVal} is prime number`)
+                console.log(`${inputVal} is prime`)
+            }else if(prime === false){
+                $('#base').append(`${inputVal} is not prime number`)
+                console.log(`${inputVal} is not prime`)
+            }
+
+
+
+        })
+    
+    
+    </script>
+</body>
+</html>
